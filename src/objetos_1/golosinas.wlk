@@ -56,14 +56,23 @@ object golosinaBaniada {
 
 object tuttifrutti {
 	var property libreGluten = true
-	var property gusto = "frutilla"
-	var property peso = 5
-	method precio() { if(libreGluten) return 7 else return 10 }
+	var gusto = "frutilla"
+	var peso = 5
+	method peso() = peso
+	method precio() = if(libreGluten) 7 else 10 
+	method gusto() = gusto
 	method mordisco() { peso = (peso - 1).max(0); 	
-		if(gusto == "frutilla") self.gusto("chocolate")
-		else if(gusto == "chocolate") self.gusto("naranja") 
-		else self.gusto("frutilla")
+//		if(gusto == "frutilla") gusto = "chocolate"
+//		else {
+//			if(gusto == "chocolate") gusto = "naranja" 
+//			else gusto = "frutilla"
+//		}
+		gusto = gusto.gusto()
+		
 	}
 	// como manejar el cambio de sabor ??
 }
 
+object frutilla{ method gusto() = return "chocolate" }
+object chocolate{ method gusto() = return "naranja" }
+object naranja{ method gusto() = return "frutilla" }
