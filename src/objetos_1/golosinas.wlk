@@ -4,7 +4,7 @@ object bombon {
 	method precio() { return 5 }
 	method peso() { return peso }
 	method mordisco() { peso = peso * 0.8 - 1 }
-	method gusto() { return "frutilla" }
+	method gusto() = "frutilla"
 	method libreGluten() { return true }
 }
 
@@ -39,7 +39,7 @@ object chocolatin {
 }
 
 object golosinaBaniada {
-	var golosinaInterior
+	var property golosinaInterior = bombon
 	var pesoBanio = 4
 	
 	method baniaA(unaGolosina) { golosinaInterior = unaGolosina }
@@ -47,7 +47,7 @@ object golosinaBaniada {
 	method peso() { return golosinaInterior.peso() + pesoBanio }
 	method mordisco() {
 		golosinaInterior.mordisco()
-		if (pesoBanio > 0) { pesoBanio -= 2 }
+		pesoBanio = (pesoBanio - 2).max(0)
 		// otra forma de hacer la cuenta: pesoBanio = (pesoBanio - 2).max(0) 
 	}	
 	method gusto() { return golosinaInterior.gusto() }
@@ -56,7 +56,7 @@ object golosinaBaniada {
 
 object tuttifrutti {
 	var property libreGluten = true
-	var gusto = "frutilla"
+	var gusto = frutilla
 	var peso = 5
 	method peso() = peso
 	method precio() = if(libreGluten) 7 else 10 
@@ -67,12 +67,11 @@ object tuttifrutti {
 //			if(gusto == "chocolate") gusto = "naranja" 
 //			else gusto = "frutilla"
 //		}
-		gusto = gusto.gusto()
+		gusto = gusto.gustoSiguiente()
 		
 	}
-	// como manejar el cambio de sabor ??
 }
 
-object frutilla{ method gusto() = return "chocolate" }
-object chocolate{ method gusto() = return "naranja" }
-object naranja{ method gusto() = return "frutilla" }
+object frutilla{ method gustoSiguiente() = chocolate }
+object chocolate{ method gustoSiguiente() = naranja }
+object naranja{ method gustoSiguiente() = frutilla }
