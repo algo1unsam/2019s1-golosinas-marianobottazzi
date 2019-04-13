@@ -11,6 +11,9 @@ object mariano {
 		return [] 
 	}
 	method desecharGolosinas(unaGolosina) { golosinas.remove(unaGolosina) }
-	method probarGolosinas() {  }
+	method probarGolosinas() { golosinas.forEach { unaGolosina => unaGolosina.mordisco() } }
+	method hayGolosinaSinTACC() { 
+		return golosinas.find( { unaGolosina => unaGolosina.libreGluten()  } )
+	}
 }
 
