@@ -1,0 +1,27 @@
+import golosinas.*
+
+describe "test 1" {
+	
+	test "peso inicial" {
+		assert.equals(15, tuttiFrutti.peso())
+	}
+	
+	test "precio" {
+		assert.equals(5, tuttiFrutti.precio())
+	}
+	
+	test "mordiscos" {
+		tuttiFrutti.mordisco()
+		assert.equals(11, tuttiFrutti.peso())
+		tuttiFrutti.mordisco()
+		assert.equals(7.8, tuttiFrutti.peso())
+	}
+	
+	test "gusto" {
+		assert.equals("frutilla", bombon.gusto())
+	}
+	
+	test "libre de gluten" {
+		assert.that(tuttiFrutti.libreGluten())	
+	}
+}

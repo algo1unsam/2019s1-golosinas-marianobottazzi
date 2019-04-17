@@ -8,7 +8,7 @@ object mariano {
 	method comprar(unaGolosina) { golosinas.add(unaGolosina) }
 	method golosinas() {
 		/* cambiar por la implementacion correcta */ 
-		return {} 
+		return golosinas 
 	}
 	method desecharGolosinas(unaGolosina) { golosinas.remove(unaGolosina) }
 	method probarGolosinas() { golosinas.forEach { unaGolosina => unaGolosina.mordisco() } }

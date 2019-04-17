@@ -62,6 +62,10 @@ object chocolatin {
 		pesoInicial = cuanto
 		pesoActual = cuanto
 	}
+	method precio() = pesoInicial * 0.5
+	method gusto() = "chocolate"
+	method libreGluten() = false
+	method mordisco() { pesoActual -= 2 }
 }
 
 object golosinaBaniada {
@@ -80,7 +84,7 @@ object golosinaBaniada {
 	method libreGluten() { return golosinaInterior.libreGluten()}	
 }
 
-object tuttifrutti {
+object tuttiFrutti {
 	var property libreGluten = true
 	var gusto = frutilla
 	var peso = 5
@@ -89,7 +93,7 @@ object tuttifrutti {
 	method gusto() = gusto
 	method mordisco() { peso = (peso - 1).max(0); 	
 //		if(gusto == "frutilla") gusto = "chocolate"
-//		else {
+ //		else {
 //			if(gusto == "chocolate") gusto = "naranja" 
 //			else gusto = "frutilla"
 //		}
