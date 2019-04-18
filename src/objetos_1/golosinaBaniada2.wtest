@@ -1,0 +1,38 @@
+import golosinas.*
+
+describe "test chocolatin bañado" {
+	
+	test "peso inicial" {
+		golosinaBaniada.baniaA(chocolatin)
+		chocolatin.pesoInicial(50)
+		assert.equals(54, golosinaBaniada.peso())
+	}
+	
+	test "precio" {
+		golosinaBaniada.baniaA(chocolatin)
+		chocolatin.pesoInicial(50)
+		assert.equals(27, golosinaBaniada.precio())
+	}
+	
+	test "mordiscos" {
+		golosinaBaniada.baniaA(chocolatin)
+		chocolatin.pesoInicial(50)
+		assert.equals(54, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(50, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(46, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(44, golosinaBaniada.peso())
+	}
+	
+	test "gusto" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.equals("chocolate", golosinaBaniada.gusto())
+	}
+	
+	test "libre de gluten" {
+		golosinaBaniada.baniaA(chocolatin)
+		assert.notThat(golosinaBaniada.libreGluten())	
+	}
+}

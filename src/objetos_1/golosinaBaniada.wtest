@@ -1,27 +1,41 @@
 import golosinas.*
 
-describe "test 1" {
+describe "test pastilla tuttiFrutti libre de gluten bañada" {
 	
 	test "peso inicial" {
-		assert.equals(15, golosinaBaniada.peso())
+		golosinaBaniada.baniaA(tuttiFrutti)
+		assert.equals(9, golosinaBaniada.peso())
 	}
 	
 	test "precio" {
-		assert.equals(5, golosinaBaniada.precio())
+		golosinaBaniada.baniaA(tuttiFrutti)
+		assert.equals(9, golosinaBaniada.precio())
 	}
 	
 	test "mordiscos" {
+		golosinaBaniada.baniaA(tuttiFrutti)
+		assert.equals(9, golosinaBaniada.peso())
 		golosinaBaniada.mordisco()
-		assert.equals(11, golosinaBaniada.peso())
+		assert.equals(6, golosinaBaniada.peso())
 		golosinaBaniada.mordisco()
-		assert.equals(7.8, golosinaBaniada.peso())
+		assert.equals(3, golosinaBaniada.peso())
+		golosinaBaniada.mordisco()
+		assert.equals(2, golosinaBaniada.peso())
 	}
 	
 	test "gusto" {
-		assert.equals("frutilla", golosinaBaniada.gusto())
+		golosinaBaniada.baniaA(tuttiFrutti)
+		assert.equals(frutilla, golosinaBaniada.gusto())
+		golosinaBaniada.mordisco()
+		assert.equals(chocolate, golosinaBaniada.gusto())
+		golosinaBaniada.mordisco()
+		assert.equals(naranja, golosinaBaniada.gusto())
+		golosinaBaniada.mordisco()
+		assert.equals(frutilla, golosinaBaniada.gusto())
 	}
 	
 	test "libre de gluten" {
+		golosinaBaniada.baniaA(tuttiFrutti)
 		assert.that(golosinaBaniada.libreGluten())	
 	}
 }
