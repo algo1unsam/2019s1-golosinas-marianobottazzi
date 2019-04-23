@@ -43,7 +43,8 @@ describe "tests de mariano" {
 		juliana.golosinasDeseadas(chupetin)
 		juliana.golosinasDeseadas(caramelo)
 		juliana.golosinasDeseadas(bombon)
-		assert.equals(chupetin, mariano.noCompradas())
-	}	
+		assert.equals(mariano.golosinasFaltantes(juliana.golosinasDes()), #{chupetin})
+//		assert.that(mariano.golosinasFaltantes(juliana.golosinasDes()).contains(chupetin))
+		}
 }
-
+		
