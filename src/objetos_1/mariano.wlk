@@ -2,6 +2,7 @@ import golosinas.*
 
 object mariano {
 	var golosinas = #{}
+	var noCompradas = #{}
 	// para este objeto no damos pistas
 	// definimos algunos métodos para que compile el test
 	
@@ -36,5 +37,15 @@ object mariano {
 	method pesoGolosinas() {
 		return golosinas.sum( { unaGolosina => unaGolosina.peso() } )
 	}
+	
+	method golsinasFaltantes(unaColeccion) { return noCompradas.
+		map( unaColeccion.remove(golosinas)).asSet()
+	}
+	 
+	method noCompradas() { return noCompradas }
+	 
+	method saboresFaltantes(unaColeccion) {  }
+	
+
 }
 
